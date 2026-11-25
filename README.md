@@ -4,7 +4,7 @@
 
 This project demonstrates a practical security-monitoring workflow: validating log data, writing SPL searches, identifying suspicious authentication patterns, reviewing Fail2ban and UFW telemetry, building a monitoring dashboard, and documenting investigation results with appropriate caveats.
 
-> **Portfolio note:** This is an independently prepared, anonymised portfolio presentation. Organisation-specific details, usernames, source addresses, hostnames, and raw production log entries are intentionally excluded. The project does not claim that a security compromise was confirmed.
+> **Portfolio note:** This is an independently prepared, anonymised portfolio presentation. Source IP labels in the Top Attacking Source Addresses screenshot have been replaced with generic identifiers. Usernames remain visible in the Most Targeted Usernames screenshot; publish this material only if you are authorised to disclose those account names. Raw production log entries, credentials, hostnames, and confidential organisation details are not included. The project does not claim that a security compromise was confirmed.
 
 ## At a glance
 
@@ -69,19 +69,35 @@ The Splunk environment also contained Windows Security event data during explora
 
 ## Dashboard
 
-The SSH monitoring dashboard is documented in:
+The SSH monitoring dashboard was built in Splunk Enterprise to support investigation of authentication activity and communicate observed patterns.
 
-- [SSH Attack Monitoring Dashboard](dashboards/ssh-attack-monitoring.md)
+### Dashboard screenshots
 
-The dashboard documentation describes the following panels:
+#### 1. Top Attacking Source Addresses
 
-- Top Attacking IPs
-- Attack Type Distribution
-- Attack Activity Over Time
-- Most Targeted Usernames
-- Successful authentication event count
+![Top Attacking Source Addresses](dashboards/screenshots/04-top-attacking-ips-anonymized.png)
 
-See the [Dashboard Screenshot Gallery](dashboards/screenshots/README.md) for the four dashboard visualisations. The anonymised Top Attacking Source Addresses screenshot and the remaining reviewed screenshots will be uploaded to that folder.
+Ranks source addresses by observed event count. Source IP labels have been replaced with generic identifiers (Source 01–10); chart bars and counts are retained.
+
+#### 2. Attack Type Distribution
+
+![Attack Type Distribution](dashboards/screenshots/03-attack-type-distribution.png)
+
+Shows the distribution between the dashboard categories Brute Force and User Enumeration. These are classifications based on the dashboard's SPL logic and do not independently prove attacker intent.
+
+#### 3. Attack Activity Over Time
+
+![Attack Activity Over Time](dashboards/screenshots/02-attack-activity-over-time.png)
+
+Shows logged activity over the displayed period, 8–13 March 2026. Peaks indicate periods of increased event volume within the available telemetry.
+
+#### 4. Most Targeted Usernames
+
+![Most Targeted Usernames](dashboards/screenshots/01-most-targeted-usernames.png)
+
+Ranks usernames observed in authentication events. Usernames remain visible in this screenshot; confirm that their publication is authorised before sharing this repository.
+
+For more detail, see the [Dashboard Screenshot Gallery](dashboards/screenshots/README.md) and [SSH Attack Monitoring Dashboard documentation](dashboards/ssh-attack-monitoring.md).
 
 ## Incident analysis
 
