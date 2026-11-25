@@ -67,6 +67,14 @@ The Splunk environment also contained Windows Security event data during explora
 6. **Correlate cautiously** — compare addresses and timestamps across sources without assuming that similar events prove a shared cause.
 7. **Assess and communicate** — distinguish observed facts from hypotheses, record data limitations, and recommend validation steps.
 
+## SPL Query Library
+
+The project includes a documented SPL reference based on the author's learning notes and searches developed during the SSH investigation.
+
+- [SPL Query Notes and Examples](spl-queries/README.md) — Boolean operators, search structure, pipes, aggregations, filtering, sorting, field extraction, and SSH investigation examples.
+
+The query documentation distinguishes original learning examples from syntax-corrected versions and includes validation guidance. Always verify field names and event formats against the target dataset before using a query operationally.
+
 ## Dashboard
 
 The SSH monitoring dashboard was built in Splunk Enterprise to support investigation of authentication activity and communicate observed patterns.
@@ -136,7 +144,7 @@ The report records the observed activity, explains the limits of the available e
 │   └── ssh-attack-monitoring.md
 ├── incident-reports/
 │   └── ssh-authentication-incident-analysis.md
-├── spl-queries/          # SPL examples will be added
+├── spl-queries/\n│   └── README.md         # Documented SPL query examples
 └── documentation/        # Methodology and supporting notes
 ```
 
