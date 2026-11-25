@@ -81,7 +81,7 @@ The dashboard documentation describes the following panels:
 - Most Targeted Usernames
 - Successful authentication event count
 
-Sanitised screenshots will be added after they have been reviewed to ensure that no organisation-specific or sensitive information is visible.
+See the [Dashboard Screenshot Gallery](dashboards/screenshots/README.md) for the four dashboard visualisations. The anonymised Top Attacking Source Addresses screenshot and the remaining reviewed screenshots will be uploaded to that folder.
 
 ## Incident analysis
 
